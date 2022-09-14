@@ -24,7 +24,8 @@ class _NewMessageState extends State<NewMessage> {
       'text': _userEnterMessage,
       'time': Timestamp.now(),
       'userId': user.uid,
-      'userName': userData.data()!['userName']
+      'userName': userData.data()!['userName'],
+      'userImage': userData['picked_image'],
     });
     _controller.clear();
   }
@@ -41,7 +42,7 @@ class _NewMessageState extends State<NewMessage> {
               maxLines: null,
               controller: _controller,
               decoration: InputDecoration(
-                labelText: 'Send A Message...',
+                labelText: 'Send a message...',
               ),
               onChanged: ((value) {
                 setState(() {
